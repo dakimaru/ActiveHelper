@@ -1,0 +1,14 @@
+<%= form_for @organization, :html => { :multipart => true } do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+		<%= f.label :password %>
+    <%= f.text_field :password %>
+
+    <%= f.label :password_confirmation, "Confirm Password" %>
+    <%= f.text_field :password_confirmation %>
+	
+		<div class="form-actions">
+			<%= f.submit "Change my password", class: "btn btn-large btn-primary" %>
+			<%= link_to "Cancel", organization_path, class: "btn btn-large"%>
+		</div>
+<% end %>

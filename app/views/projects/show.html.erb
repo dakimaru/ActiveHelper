@@ -1,0 +1,39 @@
+<% provide(:title, @project.name) %>
+<div class="row">
+	<aside class="span2">
+		<%= render 'avatar'%>
+		<%= render 'status'%>
+	</aside>
+	
+	<div class="span9">
+		<h1 id="modeltitle">	
+			<%= @project.name %>
+		</h1>
+
+		<h3 style='display: inline-block;'> Project by <%= @project.organization.name%></h3>
+		
+		<div style='margin-top: 1em;'>
+		<% if project_owner %>
+			<%= render 'delete_project'%>
+		<% end %>
+		</div>
+
+		
+		<%= render 'mission'%>
+
+		<h3>The Details</h3></br>
+		<%= render 'objective'%>
+		<%= render 'who_should_apply'%>
+		<%= render 'further_details'%>
+		
+		<div class="alert alert-error" style="font-size: big; padding: 1em">ATTENTION: This project activates only if cap is met.</div>
+		
+		<label class="checkbox">
+		    <input type="checkbox"> By applying to this project I agree to fully commit my time for the dates stated.
+		</label>
+		<div class="btn btn-large btn-primary offset3">Apply</div>
+		</div>
+		
+		
+	</div>
+</div>

@@ -1,0 +1,18 @@
+<form class="navbar-search" >
+  <input type="text" class="search-query" style="background: white;" placeholder="Profiles/Orgs">
+</form>
+<li><%= link_to "Home", current_organization %></li>
+<li><%= link_to "Profile", current_organization %></li>
+<li><%= link_to "Browse", organizations_path %></li>
+<li id="fat-menu" class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    Account <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li><%= link_to "Settings", edit_organization_path(current_organization) %></li>
+    <li class="divider"></li>
+    <li>
+      <%= link_to "Sign Out", signout_path, method: "delete" %>
+    </li>
+  </ul>
+</li>

@@ -1,0 +1,54 @@
+<%= form_for @organization, :html => { :multipart => true }  do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+		<div class="well">
+		<%= f.label 'Active Fields (Choose up to 3)' %>
+    <%= f.text_field :active_field_1, :placeholder => "Disaster Relief" %>
+		<%= f.text_field :active_field_2, :placeholder => "Environmental" %>
+		<%= f.text_field :active_field_3, :placeholder => "Education" %>
+		</div>
+
+		<%= f.label "Your Mission (400 characters or less)" %>
+    Characters left: <span id="char-count">400</span>
+    <%= f.text_area :mission , :maxlength => 400, :rows => 8%>
+
+		<%= f.label "Detailed Description (2000 characters or less)" %>
+		Characters left: <span id="char-count">2000</span>
+    <%= f.text_area :description, :maxlength => 2000, :rows => 8 %>
+
+		<%= f.label 'Website' %>
+    <%= f.text_field :url, :placeholder => "www.activehelper.org" %>
+
+		<%= f.label "Facebook URL" %>
+    <%= f.text_field :facebook_link, :placeholder => "www.facebook.com/active.helper" %>
+
+		<%= f.label "Twitter URL" %>
+    <%= f.text_field :twitter_link, :placeholder => "www.twitter.com/active_helper" %>
+
+		<div class="well form-inline"><p>Change Profile Picture</p>
+		<%= f.file_field :avatar %>
+		</div>
+
+		<%= f.hidden_field :password, value: @organization.password_digest %>
+    <%= f.hidden_field :password_confirmation, value: @organization.password_digest %>
+
+		<div class="form-actions">
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+			<%= link_to "Cancel", user_path, class: "btn btn-large"%>
+		</div>
+		
+  <% end %>
+
+
+	<script type="text/javascript">	
+	var maxLen = 400;
+	$(function() { setCharCount($('#organization_mission'));	});
+	$('#organization_mission').live('keyup keydown', function(e) { setCharCount($(this));	});	 
+	function setCharCount(object) {	 var left = maxLen - object.val().length;	 $('#char-count').html(left);	}
+	</script>

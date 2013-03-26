@@ -1,0 +1,75 @@
+<% provide(:title, "Edit Project") %> 
+<h1>Update Project</h1>
+<div class="row">
+  <div class="span6 offset3">
+		
+  
+		<%= form_for @project, :html => { :multipart => true } do |f| %>
+		
+		    <%= render 'shared/error_messages', object: f.object %>
+
+				<legend>Basic Info & Stats</legend>
+				
+		    <%= f.label 'Project Name' %>
+		    <%= f.text_field :name %>
+		
+				<%= f.label 'Type of activity' %>				
+		    <%= f.select :mission_type, options_for_select([["", ""], "Disaster Relief", "Environmental", "Educational", "Medical", "Social"])%>
+		
+				<%= f.label 'Location' %>
+		    <%= f.text_field :location, :placeholder => "University of Michigan, 48105 area" %>
+		
+				<%= f.label 'Participation Cost (In none please type "FREE")' %>
+		    <%= f.text_field :cost, :placeholder => "5.50 USD" %>
+		
+				<%= f.label 'Starting Date' %>
+		    <%= f.text_field :start, :placeholder => "5.50 USD" %>
+		
+				<%= f.label 'Ending Date' %>
+		    <%= f.text_field :end, :placeholder => "5.50 USD" %>
+				
+				<%= f.label 'Project Duration' %>
+		    <%= f.text_field :duration, :placeholder => "5.50 USD" %>
+				
+				
+		
+				<%= f.label 'Project Cap' %>
+		    <%= f.text_field :cap, :placeholder => "5.50 USD" %>
+
+				<legend>Descriptions</legend>
+				
+				<%= f.label "In short (400 characters or less)" %>
+				Characters left: <span id="char-count">400</span>
+		    <%= f.text_area :in_short , :maxlength => 400, :rows => 8%>
+		
+				<%= f.label "Objective (1000 characters or less)" %>
+				Characters left: <span id="char-count">400</span>
+		    <%= f.text_area :objective, :maxlength => 400, :rows => 8 %>
+		
+				<%= f.label "Who should apply (1000 characters or less)" %>
+				Characters left: <span id="char-count">400</span>
+		    <%= f.text_area :who_should_apply, :maxlength => 400, :rows => 8 %>
+		
+				<%= f.label "Further details (1000 characters or less)" %>
+				Characters left: <span id="char-count">400</span>
+		    <%= f.text_area :further_details, :maxlength => 400, :rows => 8 %>
+				<legend>Project Picture</legend>
+				
+				<div class="well form-inline"><p>Project Picture</p>
+				<%= f.file_field :avatar %>
+				</div>
+
+				<div class="form-actions">
+		      <%= f.submit "Save", class: "btn btn-large btn-primary" %>
+					<%= link_to "Cancel", project_path, class: "btn btn-large"%>
+				</div>
+		<%end%>
+  </div>
+</div>					
+
+<script type="text/javascript">	
+var maxLen = 400;
+$(function() { setCharCount($('#project_in_short'));	}); 
+$('#project_in_short').live('keyup keydown', function(e) { setCharCount($(this));	});	 
+function setCharCount(object) {	 var left = maxLen - object.val().length;	 $('#char-count').html(left);	}
+</script>

@@ -1,0 +1,29 @@
+	<h1 id="modeltitle">
+		<%= @user.name %>
+	</h1>
+	
+	<span class="offset0">
+	<% if !@user.facebook_link.blank? %>
+		<%= link_to image_tag("f_logo.png", size: "40x40"),  "http://" + @user.facebook_link, :target => '_blank' %>
+	<% end %>
+	
+	<% if !@user.twitter_link.blank? %>
+		<%= link_to image_tag("t_logo.png", size: "40x40"), "http://" + @user.twitter_link, :target => '_blank' %>
+	<% end %>
+	</span>
+
+<div class="well">
+	<% if current_user?(@user) %>
+		<% if @user.about_me.blank? %>
+			<%= link_to "Write about you", edit_user_path(current_user) %>
+		<% else %>
+			<%= @user.about_me %>
+		<%end%>
+	<% else %>
+		<% if @user.about_me.blank? %>
+			<em>"No description available"</em>
+ 		<% else %>
+			<%= @user.about_me %>
+		<%end%>
+	<%end%>
+</div>

@@ -1,0 +1,8 @@
+<div id="members">
+	<h4>Stats</h4>
+	<div class="well" id="members">
+	
+	<%= @organization.users.count%> <% if @organization.users.count == 1%> Member <%else%> Members <%end%></br>	
+	<%= @organization.projects.count%> Active	<% if @organization.projects.count == 1%> Project <%else%> Projects <%end%></br>
+	</div>
+</div>	

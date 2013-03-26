@@ -1,0 +1,11 @@
+<div style=" margin-top: 5px; margin-bottom: -20px;">
+	<%= form_tag sessions_path do %>
+	    <div style='display: inline-block;'><%= text_field_tag :email, params[:email], :placeholder => "Email" %></div>
+	    <div style='display: inline-block;'><%= password_field_tag :password, params[:password], :placeholder => "Password" %></div>
+
+				<%= check_box_tag :remember_me, 1, params[:remember_me] %>
+				Remember me
+			
+			<div class="actions" style='display: inline-block; padding-bottom: 5px; margin-top: -10px;'><%= submit_tag "Sign in" , class: "btn btn-info" %></div>
+		<% end %>
+</div>

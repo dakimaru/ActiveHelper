@@ -1,0 +1,51 @@
+<h1>Sign Up</h1>
+
+<ul class="nav nav-tabs" id="myTab">
+  <li class="active" style="font-weight: bold;"><a href="#home">Person</a></li>
+  <li style="font-weight: bold;"><a href="#profile">Organization</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="home">
+	
+			<%= form_for :user, :url => {:controller => 'users', :action => 'create'} do |f| %>
+
+    	<%= label_tag 'Name' %>
+	    <%= f.text_field :name %>
+
+	    <%= label_tag 'Email' %>
+	    <%= f.text_field :email %>
+
+	    <%= label_tag 'Password' %>
+	    <%= f.password_field :password %>
+
+	    <%= label_tag 'Confirmation' %>
+	    <%= f.password_field :password_confirmation %>
+
+		  <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+		
+  	<% end %>
+	</div>
+	
+  <div class="tab-pane" id="profile">
+	
+			<%= form_for :organization, :url => {:controller => 'organizations', :action => 'create'} do |f| %>
+
+	    	<%= label_tag 'Organization Name' %>
+		    <%= f.text_field :name %>
+
+		    <%= label_tag 'Contact Email' %>
+		    <%= f.text_field :email %>
+
+		    <%= label_tag 'Password' %>
+		    <%= f.password_field :password %>
+
+		    <%= label_tag 'Confirmation' %>
+		    <%= f.password_field :password_confirmation %>
+
+			  <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+
+	  	<% end %>
+	
+	</div>
+</div>

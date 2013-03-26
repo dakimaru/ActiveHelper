@@ -1,0 +1,10 @@
+<a href="<%= user_path(current_user) %>">
+<% if current_user.avatar_file_name.nil? %>	
+	<%= image_tag("default_avatar.png", size: '150x150')%>
+<% else %>
+	<%= image_tag current_user.avatar, size: '150x150' %>
+<%end%>
+</a>
+<h1><%= current_user.name %></h1>
+<span><%= link_to "view my profile", current_user %></span>
+

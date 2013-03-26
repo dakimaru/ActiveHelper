@@ -1,0 +1,4 @@
+<%= form_for(current_organization.projects.find_by_id(@project.id),
+             html: { method: :delete }) do |f| %>
+  <%= f.submit "Delete", class: "btn btn-large btn-danger" %>
+<% end %>

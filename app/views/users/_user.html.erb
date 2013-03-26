@@ -1,0 +1,19 @@
+<!-- User listing site -->
+
+<li>
+	<% if user.avatar_file_name.nil? %>
+		<%= image_tag("default_avatar.png", :size => "64x64") %>
+	<% else %>	  
+		<%= image_tag(user.avatar, :size => "64x64") %>
+	<% end %>
+  <%= link_to user.name, user %>
+</li>
+
+<!--
+	<%# if current_user.admin? && !current_user?(user) %>
+	| <%#= link_to "delete", user, method: :delete,
+																data: { confirm: "You sure?" } %>
+ 	<%# end %>
+</li>
+
+-->

@@ -1,0 +1,8 @@
+<div class="well">
+	<h3>Objective</h3></br>
+		<% if @project.objective == nil || @project.objective == ""%>
+			<%= link_to "In short (What it's all about)", edit_project_path%>
+		<% else %>
+			<%= @project.objective %>
+		<%end%>
+</div>

@@ -1,0 +1,20 @@
+<a data-toggle="collapse" data-target="#demo">View Status</a>
+<div class=" collapse in" id="demo">
+
+	<% if @project.cap %>
+		<% if @project.applicant_count == @project.cap || @project.applicant_count.nil? %>
+			<h3 style='display: inline-block;'>Status <span class="label label-success"> OPEN</span></h3>
+			<h3 style='display: inline-block;'>Cap <span class="label"><%= @project.cap %></span>  </h3>
+		<%end%>
+	<%else%>
+	<div>
+		<h3 style='display: inline-block;'>Status <span class="alert alert-error" style="font-size: 15px; padding: 0px"> CLOSED</span></h3>
+		<h3 style='display: inline-block;'>Cap <span class="label"><%= @project.cap %>1</span>  </h3>
+	<%end%>
+	</br>
+</div>
+</br>
+
+<div class=" well">
+	<strong><%= @project.mission_type%></strong>
+</div>

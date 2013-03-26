@@ -1,0 +1,15 @@
+<div class="well">
+<% if current_organization?(@organization) %>
+		<% if @organization.mission == nil || @organization.mission == ""%>
+			<%= link_to "Mission of Organization", edit_organization_path(current_organization) %>
+		<% else %>
+			<%= @organization.mission %>
+		<%end%>
+	<% else %>
+		<% if @organization.mission == nil || @organization.mission == ""%>
+			<i>No description available<i>
+ 		<% else %>
+			<%= @organization.mission %>
+		<%end%>
+	<%end%>
+</div>

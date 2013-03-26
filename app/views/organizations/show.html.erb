@@ -1,0 +1,28 @@
+<% provide(:title, @organization.name) %>
+<div class="row">
+	<aside class="span2">
+		<%= render 'avatar'%>
+		<%= render 'join_form'%>
+		<%= render 'stats' %>
+		<%= render 'active_fields' %>
+	</aside>
+	
+	<div class="span10">
+		<%= render 'profile_info'%>
+		
+		
+		<% if !@organization.url.blank? %>
+		<p><h3>Homepage: <%= link_to @organization.url, "http://" + @organization.url, :target => '_blank' %></h3></p>
+		<% end %>
+		
+		<% if current_organization?(@organization)%>
+			<span class="btn btn-link" style="margin-bottom: 8px;"><%= link_to "Create Project", new_project_path %></span>
+		<% end %>
+		
+		<%= render 'mission' %>
+		<%= render 'description' %>
+		
+	
+	  </div>
+	</div>
+</div>

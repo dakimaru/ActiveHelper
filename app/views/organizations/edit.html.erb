@@ -1,0 +1,31 @@
+<% provide(:title, "Edit organization") %> 
+<h1>Update your profile</h1>
+
+<div class="tabbable tabs-left offset1">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Basic Info</a></li>
+		<li><a href="#tab2" data-toggle="tab">Security</a></li>
+  </ul>
+	<div class="tab-content">
+  	<div class="tab-pane active" id="tab1">
+			<div class="row">
+			  <div class="span6 offset1">
+				
+				<legend>Basic Info</legend>
+			  <%= render 'basic_info' %>
+
+			  </div>
+			</div>					
+    </div>
+    <div class="tab-pane" id="tab2">
+      <div class="row">
+			  <div class="span6 offset1">
+				
+				<legend>Change Password</legend>
+				<%= render 'security' %>
+				
+				</div>
+    	</div>
+  	</div>
+	</div>
+</div>

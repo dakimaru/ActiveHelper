@@ -1,0 +1,39 @@
+<% if signed_in_user? %>
+
+	<%= render 'user_home' %>
+	
+<% elsif signed_in_organization? %>
+
+	<%= render 'organization_home' %>
+	
+<% else %>
+
+<!-- This is the Default Home Page -->
+
+<div class="span8 center">
+	<h1>Welcome to ActiveHelper</h1>
+	<h3  style="margin-bottom: 1em; ">Engage with others to make a difference</h3>
+	
+	<%= render 'carousel'%>
+	
+</div>
+
+<div class="well span3" style="margin-top: 6em;">
+
+	<%= render 'signup_form'%>
+	
+</div>
+
+<%= render 'followus'%>
+
+<% end %>
+
+
+<script>
+	$('#myTab a').click(function (e) {
+	  e.preventDefault();
+	  $(this).tab('show');
+	})
+</script>
+
+

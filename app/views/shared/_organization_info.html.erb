@@ -1,0 +1,9 @@
+<a href="<%= organization_path(current_organization) %>">
+  <% if current_organization.avatar_file_name.nil? %>	
+		<%= image_tag("default_avatar.png", size: '150x150')%>
+	<% else %>
+		<%= image_tag @organization.avatar, size: '150x150' %>
+	<%end%>
+</a>
+<h1><%= current_organization.name %></h1>
+<span><%= link_to "view my profile", current_organization %></span>

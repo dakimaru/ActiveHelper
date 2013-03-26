@@ -1,0 +1,8 @@
+<li>
+	<% if project.avatar_file_name.nil? %>
+		<%= image_tag("default_avatar.png", :size => "64x64") %>
+	<% else %>	  
+		<%= image_tag(project.avatar, :size => "64x64") %>
+	<% end %>
+  <%= link_to project.name, project %>
+</li>

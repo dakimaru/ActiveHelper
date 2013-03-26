@@ -1,0 +1,22 @@
+<%= provide(:title, 'All Users & Orgs') %>
+<h1>All Users</h1>
+
+<%= will_paginate %>
+
+<ul class="index">
+  	<%= render @users %>
+</ul>
+
+<h1> All Organizations </h1>
+
+<ul class="index">
+  	<%= render @organizations %>
+</ul>
+
+<h1> All Projects </h1>
+
+<ul class="index">
+  	<%= render @projects %>
+</ul>
+
+<%= will_paginate %>

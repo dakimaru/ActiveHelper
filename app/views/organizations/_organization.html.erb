@@ -1,0 +1,17 @@
+<li>
+	<% if organization.avatar_file_name.nil? %>
+		<%= image_tag("default_avatar.png", :size => "64x64") %>
+	<% else %>	  
+		<%= image_tag(organization.avatar, :size => "64x64") %>
+	<% end %>
+  <%= link_to organization.name, organization %>
+</li>
+<!--
+
+	<%# if current_user.admin? && !current_user?(user) %>
+	| <%#= link_to "delete", organization, method: :delete,
+																data: { confirm: "You sure?" } %>
+ 	<%# end %>
+</li>
+
+-->

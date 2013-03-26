@@ -1,0 +1,16 @@
+<div class="well">
+	Skills:
+	<% if current_user.id == @user.id%>
+		<% if @user.my_skills == nil || @user.my_skills == ""%>
+			<%= link_to "Your skills", edit_user_path(current_user) %>
+		<% else %>
+			<%= @user.my_skills %>
+		<%end%>
+	<% else %>
+		<% if @user.my_skills == nil || @user.my_skills == ""%>
+			None available
+		<% else %>
+			<%= @user.my_skills %>
+		<%end%>
+	<%end%>
+</div>

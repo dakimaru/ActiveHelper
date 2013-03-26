@@ -1,0 +1,12 @@
+	<% if not (	@organization.active_field_1.blank? && 
+							@organization.active_field_2.blank? && 
+							@organization.active_field_3.blank?) 
+							 %>
+	<h4>Active Fields</h4>
+	<div class="well">
+		<%= @organization.active_field_1%> </br>
+		<%= @organization.active_field_2%> </br>
+		<%= @organization.active_field_3%> </br>
+	</div>
+	
+	<% end %>

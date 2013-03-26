@@ -1,0 +1,8 @@
+<h3>The Mission</h3></br>
+<div class="well">
+		<% if @project.in_short == nil || @project.in_short == ""%>
+			<%= link_to "In short (What it's all about)", edit_project_path %>
+		<% else %>
+			<%= @project.in_short %>
+		<%end%>
+</div>

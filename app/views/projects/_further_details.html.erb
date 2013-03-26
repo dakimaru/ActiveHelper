@@ -1,0 +1,8 @@
+<div class="well">
+	<h3>Further Details</h3></br>
+		<% if @project.further_details == nil || @project.further_details == ""%>
+			<%= link_to "Add some contence", edit_project_path%>
+		<% else %>
+			<%= @project.further_details %>
+		<%end%>
+</div>

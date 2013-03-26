@@ -1,0 +1,24 @@
+<header class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+				<%= link_to "Active Helper", root_path, id: "logo" %>
+	      <nav>
+	       	<ul class="nav pull-right">
+						<% if current_user %>
+						
+							<%= render 'layouts/user_header'%>
+							
+						<% elsif current_organization %>
+						
+							<%= render 'layouts/org_header'%>
+							
+	          <% else %>
+	
+							<%= render 'layouts/default_header'%>
+							
+	          <% end %>
+	        </ul>
+	      </nav>
+			</div>
+		</div>
+</header>

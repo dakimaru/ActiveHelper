@@ -1,0 +1,13 @@
+<h1 id="modeltitle" style:"display: block;">	
+	<%= @organization.name %>
+</h1>
+
+<span class="offset0">
+<% if !@organization.facebook_link.blank? %>
+	<%= link_to image_tag("f_logo.png", size: "40x40"),  "http://" + @organization.facebook_link, :target => '_blank' %>
+<% end %>
+
+<% if !@organization.twitter_link.blank? %>
+	<%= link_to image_tag("t_logo.png", size: "40x40"), "http://" + @organization.twitter_link, :target => '_blank' %>
+<% end %>
+</span>

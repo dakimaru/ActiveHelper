@@ -1,0 +1,8 @@
+<div class="well">
+	<h3>Who Should Apply</h3></br>
+		<% if @project.who_should_apply == nil || @project.who_should_apply == ""%>
+			<%= link_to "Who Should Apply", edit_project_path%>
+		<% else %>
+			<%= @project.who_should_apply %>
+		<%end%>
+</div>
