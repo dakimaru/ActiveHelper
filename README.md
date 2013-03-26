@@ -1,1 +1,0 @@
-This is a well formated rails app that does not have a test directory. Rspec works, running on rials 3.2.3 with ruby 1.9.3.
