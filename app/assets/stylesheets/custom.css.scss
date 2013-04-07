@@ -1,6 +1,5 @@
 @import "bootstrap";
 
-
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
@@ -18,13 +17,44 @@ html, body {
 	height: 100%;
 }
 
-#wrap {
+.wrapper {
 	min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0px auto -100px; /* same as the footer */
 }
 
-#main {
-    padding-bottom:120px; /* this needs to be bigger than footer height*/
+.push {
+    height: 100px; /* pushes footer so that it does not overlap with content */
 }
+
+/* footer */
+
+footer {
+	height:100px;
+	
+	background-image: -webkit-linear-gradient(bottom, #66CDAA 0%, white 97%, white 100%);
+	background-image: -moz-linear-gradient(bottom, #66CDAA 0%, white 97%, white 100%);
+	background-repeat: repeat-x;
+ 	div {
+		color: $gray;
+		font-weight: bold;
+		&:hover {
+			color: $grayDarker;
+		}
+	}
+	ul {
+		list-style: none;
+		li {
+			float: left;
+			margin-left: 10px;
+		}
+	}
+	a {
+		font-weight:bold;
+	}
+}
+
 
 textarea {
 	resize: vertical;
@@ -32,9 +62,6 @@ textarea {
 
 .center {
 	text-align: center;
-	h1 {
-		margin-bottom: 10px;
-	}
 }
 
 /* typography */
@@ -100,37 +127,6 @@ p {
 .navbar .nav > li > a {
 	color: white;
 	font-weight: bold;
-}
-
-/* footer */
-
-footer {
-	position: relative;
-	clear:both;
-	margin-top: -120px; /* negative value of footer height */
-	height: 120px;
-	padding-top: 20px;
-	
-	background-image: -webkit-linear-gradient(bottom, #66CDAA 0%, white 97%, white 100%);
-	background-image: -moz-linear-gradient(bottom, #66CDAA 0%, white 97%, white 100%);
-	background-repeat: repeat-x;
- 	div {
-		color: $gray;
-		font-weight: bold;
-		&:hover {
-			color: $grayDarker;
-		}
-	}
-	ul {
-		list-style: none;
-		li {
-			float: left;
-			margin-left: 10px;
-		}
-	}
-	a {
-		font-weight:bold;
-	}
 }
 
 /* signin and search boxes, overwriting bootstrap css */

@@ -21,11 +21,12 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
 end
 
 group :development do
-  gem 'sqlite3'
+  
   gem 'guard-rspec', '0.5.5'
 end
 
@@ -39,7 +40,8 @@ gem 'rb-fsevent'
 end
 
 group :production do
-  gem 'pg', '0.12.2'
+  gem 'pg'
+  gem 'thin'
 end
 # the last one is a problematic one. Either use one or the other website solution.
 # https://github.com/thibaudgg/rb-fsevent/issues/20

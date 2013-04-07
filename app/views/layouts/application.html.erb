@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title><%= full_title(yield(:title))%></title>
-		<%= stylesheet_link_tag "application", :media => "all" %>
-		<%= javascript_include_tag "application" %>
-		<%= csrf_meta_tags %>
-		<%= render 'layouts/shim' %>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-	</head>
-	
-	<body>
+<head>
+	<title><%= full_title(yield(:title))%></title>
+	<%= stylesheet_link_tag "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+	<%= render 'layouts/shim' %>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+</head>
+
+<body>
+	<div class="wrapper">
 		<%= render 'layouts/header'%>
-		
-		<div id="wrap">
-			<div class="container" id="main" >
-				<div class="row">
-					<% flash.each do |key, value| %>
-					<div class="alert alert-<%= key %>"><%= value %></div>
-					<% end %>
-					<%= yield %>
-					
-					<!-- <%= debug(params) if Rails.env.development? %> -->
-				</div>
-			</div>
+		<div class="container" style="padding-top: 20px;">
+			<% flash.each do |key, value| %>
+			<div class="alert alert-<%= key %>"><%= value %></div>
+			<% end %>
+
+			<%= yield %>
 		</div>
-	
-		<%= render 'layouts/footer' %>
-	</body>
+		<div class="push"></div>
+	</div><!-- wrapper finish -->
+
+	<%= render 'layouts/footer' %>
+</body>
 </html>
-				
